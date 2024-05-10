@@ -55,6 +55,11 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeRepository.findAll());
     }
 
+    @GetMapping("/hello")
+    public ResponseEntity<?> testing() {
+        return ResponseEntity.ok("Hello World!");
+    }
+
     @PostMapping("/login")
     public ResponseEntity<?> signIn(@RequestBody Employee employee) {
         Optional<Employee> emp = employeeRepository.findByEmail(employee.getEmail());
