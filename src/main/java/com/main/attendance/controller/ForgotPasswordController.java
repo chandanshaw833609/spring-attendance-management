@@ -21,7 +21,7 @@ import java.util.Random;
 
 @RestController
 @RequestMapping("/forgot-password")
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin({"http://localhost:5173", "https://vimal-sakseria.vercel.app"})
 public class ForgotPasswordController {
 
     @Autowired

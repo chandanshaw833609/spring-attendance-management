@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Locale;
 
 @RestController
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin({"http://localhost:5173", "https://vimal-sakseria.vercel.app"})
 public class AttendanceController {
 
     @Autowired
