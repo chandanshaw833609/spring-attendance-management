@@ -62,15 +62,10 @@ public class AttendanceController {
         return ResponseEntity.ok(attendanceRepository.findAll());
     }
 
-    @GetMapping("/attendance/{date}")
-    public ResponseEntity<?> getAttendanceByDate(@PathVariable String date) {
-        System.out.println("My date is : " + date);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M-dd-yyyy");
-
-        LocalDate localDate = LocalDate.parse(date, formatter);
-        List<Attendance> attendanceList = attendanceRepository.findByDate(localDate);
-        System.out.println(attendanceList.toString());
-        return ResponseEntity.ok(attendanceRepository.findByDate(localDate));
+    @GetMapping("/attendance/today/all")
+    public ResponseEntity<?> getAttendanceByDate() {
+        System.out.println(LocalDate.now());
+        return ResponseEntity.ok(attendanceRepository.findByDate(LocalDate.now()));
     }
 
     @GetMapping("/custom-attendance/{startingDate}/{finalDate}")
